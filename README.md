@@ -19,7 +19,7 @@ This exercise demonstrates how to extract AWS Application Load Balancer (ALB) ac
 
 ## 📥 Input: ELB Access Logs
 
-- **Source**: AWS S3 bucket (you will be provided a bucket name and prefix)
+- **Source**: AWS S3 bucket
 - **Format**: ALB access logs, space-delimited  
 - **Compression**: May be `.gz` compressed files
 
