@@ -2,7 +2,7 @@
 
 ## 📌 Objective
 
-This exercise demonstrates how to extract AWS Application Load Balancer (ALB) access logs from an S3 bucket, transform key log data, and load the processed results into a MySQL database table named `elb_log_data`.
+This exercise demonstrates how to extract AWS Application Load Balancer (ALB) access logs from an S3 bucket, transform key log data, and load the processed results into a MySQL database table.
 
 ---
 
@@ -33,15 +33,7 @@ This exercise demonstrates how to extract AWS Application Load Balancer (ALB) ac
 ### ✅ Transformation
 For each log entry:
 - Parse standard ALB fields (quoted and unquoted)
-- Extract and convert:
-  - `timestamp` → datetime in US/Eastern timezone
-  - `client_ip` → from `client_ip:port`
-  - `http_method` and `requested_path` → from the `"request"` field
-  - `user_agent_full` → store entire UA string
-  - `ua_browser_family`, `ua_os_family` → parsed using `httpagentparser`
-  - `total_processing_time_ms` → sum of 3 timing fields (in ms)
-  - `received_bytes` and `sent_bytes` → integers
-  - `log_source_file` → S3 object key
+- Extract and convert
 
 ### ✅ Loading
-- Insert transformed rows into the `elb_log_data` table in MySQL using SQLAlchemy
+- Insert transformed rows into the table in MySQL using SQLAlchemy
