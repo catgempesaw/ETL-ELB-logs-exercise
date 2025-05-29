@@ -1,0 +1,8 @@
+boto3
+pandas
+sqlalchemy
+pymysql
+python-dotenv
+httpagentparser
+pytz
+user-agents
